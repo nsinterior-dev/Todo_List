@@ -8,8 +8,11 @@ export default function App() {
 
   const [task, setTask] = useState();
 
+  const [taskItems, setTaskItems] = useState([]);
+
   const handleAddTask = () => {
-    console.log(task);
+    setTaskItems([...taskItems, task])
+    setTask(null);
   }
 
   return (
@@ -20,9 +23,15 @@ export default function App() {
 
           <View style={styles.items}>
             {/* This is where the tasks will go */}
-            <Task text={'Task 1'}/>
-            <Task text={'Task 2'}/>
-            <Task text={'Task 3'}/>   
+          {
+            taskItems.map((item) => {
+              return (
+                  <Task text={item} />
+              )
+
+            })
+          }
+
           </View>
       </View>
 
