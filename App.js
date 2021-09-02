@@ -7,8 +7,13 @@ export default function App() {
     <View style={styles.container}>
         {/* Today's Task */}
         <View style={styles.taskWrapper}>
-          <Text>Today's Task</Text>
-        </View>
+          <Text style={styles.sectionTitle}>Today's Task</Text>
+
+          <View style={styles.items}>
+            {/* This is where the tasks will go */}
+
+          </View>
+      </View>
     </View>
   );
 }
@@ -18,4 +23,13 @@ const styles = StyleSheet.create({
    flex: 1,
    backgroundColor: '#1381a2',
   },
+  taskWrapper:{
+    paddingTop: 80,
+    paddingHorizontal: 20,
+  },
+  sectionTitle:{
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  items:{},
 });
