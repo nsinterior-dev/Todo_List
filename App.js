@@ -6,6 +6,11 @@ import Task from './components/Task';
 export default function App() {
   var Platform = "";
 
+  const [task, setTask] = useState();
+
+  const handleAddTask = () => {
+    console.log(task);
+  }
 
   return (
     <View style={styles.container}>
@@ -26,9 +31,9 @@ export default function App() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.writeTaskWrapper}>
 
-        <TextInput style={styles.input} placeholder={'Write a Task'} ></TextInput>
+        <TextInput style={styles.input} value={task} placeholder={'Write a Task'} onChangeText={text => setTask(text)} ></TextInput>
 
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => handleAddTask()}>
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
           </View>
