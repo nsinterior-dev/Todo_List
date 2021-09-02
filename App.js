@@ -24,9 +24,9 @@ export default function App() {
           <View style={styles.items}>
             {/* This is where the tasks will go */}
           {
-            taskItems.map((item) => {
+            taskItems.map((item, index) => {
               return (
-                  <Task text={item} />
+                  <Task key={index} text={item} />
               )
 
             })
